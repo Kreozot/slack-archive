@@ -29,9 +29,14 @@ function getInitialState(channelName) {
 		db.getChannels(),
 		db.getMessages({
 			channel: channelName,
-			hideSystem: true
+			hideSystem: true,
+			// skip: 10,
+			limit: 5
 		}),
 		function (channels, messages) {
+			messages.sort(function (message1, message2) {
+				return (parseFloat(message1.ts) < parseFloat(message2.ts)) ? 1 : -1;
+			});
 			return {
 				channels,
 				channelName,

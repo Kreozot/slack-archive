@@ -3,9 +3,6 @@ var Message = require('./Message.jsx');
 var ChatView = require('react-chatview');
 
 module.exports = React.createClass({
-	handleClick: function () {
-
-	},
 	render: function () {
 		var messages = this.props.messages.map(message =>
 			<Message
@@ -16,14 +13,20 @@ module.exports = React.createClass({
 				key={message._id}
 			/>
 		);
-		return <ChatView
-			className="message-area"
-			flipped={true}
-			elementHeight={40}
-            scrollLoadThreshold={50}
-		>
-		    {messages}
-		</ChatView>
+		return (
+			<div
+				className="message-area"
+				flipped={true}
+				elementHeight={40}
+	            scrollLoadThreshold={50}
+				onInfiniteLoad={this.handleInfiniteLoad}
+			>
+			    {messages}
+			</div>
+		)
 		// return <div>{messages}</div>;
+	},
+	handleInfiniteLoad: function () {
+		console.log('load');
 	}
 });

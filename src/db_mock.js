@@ -45,6 +45,7 @@ function getChannels() {
 
 function getUsers() {
 	return new Promise(function (resolve, reject) {
+		console.log(mem.user);
 		resolve(mem.User);
 	});
 }
@@ -71,4 +72,3 @@ module.exports = {
 	getChannels,
 	getMessages
 }
-

@@ -92,8 +92,10 @@ function getMessages(filter) {
 		.find(criteria)
 		.populate('user')
 		.sort({
-			ts: 'asc'
+			ts: 'desc'
 		})
+		.limit(criteria.limit)
+		.skip(criteria.skip)
 		.exec();
 }
 
@@ -104,4 +106,3 @@ module.exports = {
 	getChannels,
 	getMessages
 }
-
