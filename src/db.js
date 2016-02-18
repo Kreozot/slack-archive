@@ -94,8 +94,8 @@ function getMessages(filter) {
 		.sort({
 			ts: 'desc'
 		})
-		.limit(criteria.limit)
-		.skip(criteria.skip)
+		.limit(filter.limit)
+		.skip(filter.skip)
 		.exec();
 }
 

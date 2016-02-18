@@ -3,7 +3,7 @@ var React = require('react');
 module.exports = React.createClass({
 	render: function () {
 		return (
-			<div>
+			<div className="message">
 				<div className="message__avatar">
 					<img src={this.props.avatar}/>
 				</div>

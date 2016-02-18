@@ -7,8 +7,8 @@ var exportRead = require('./exportRead.js');
 
 function exportToDb(db) {
 	db = db || dbModule;
-	return new Promise(resolve => {resolve()})
-	// db.connect()
+	// return new Promise(resolve => {resolve()})
+	db.connect()
 		.then(function () {
 			return exportRead.readChannels()
 				.map(function (channel) {
@@ -32,6 +32,9 @@ function exportToDb(db) {
 		})
 		.then(function () {
 			console.log('done');
+		})
+		.catch(function (error) {
+			console.error(error);
 		});
 };
 

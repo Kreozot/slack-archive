@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "gulp start",
-    "test": "mocha"
+    "test": "mocha",
+    "exportToDb": "node exportToDb.js"
   },
   "author": "Kreozot",
   "license": "ISC",
@@ -22,6 +23,7 @@
     "moment": "^2.11.1",
     "mongoose": "^4.3.4",
     "node-jsx": "^0.13.3",
+    "passport": "^0.3.2",
     "qs": "^6.0.1",
     "react": "^0.14.6",
     "react-chatview": "0.0.1-alpha.8",

@@ -31,7 +31,7 @@ function getInitialState(channelName) {
 			channel: channelName,
 			hideSystem: true,
 			// skip: 10,
-			limit: 5
+			limit: 25
 		}),
 		function (channels, messages) {
 			messages.sort(function (message1, message2) {
