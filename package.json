@@ -4,7 +4,7 @@
   "description": "Slack archive",
   "main": "index.js",
   "scripts": {
-    "start": "gulp build && node index.js",
+    "start": "gulp build && babel-node index.js --presets es2015",
     "test": "mocha",
     "exportToDb": "node exportToDb.js"
   },
@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "adm-zip": "^0.4.7",
+    "babel-cli": "^6.11.4",
     "babel-polyfill": "^6.3.14",
     "bluebird": "^3.1.1",
     "body-parser": "^1.14.2",
