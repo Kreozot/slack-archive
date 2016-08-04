@@ -1,6 +1,5 @@
 var React = require('react');
 var Message = require('./Message.jsx');
-var ChatView = require('react-chatview');
 
 module.exports = React.createClass({
 	render: function () {
@@ -15,18 +14,14 @@ module.exports = React.createClass({
 		);
 		return (
 			<div
-				className="message-area"
-				flipped={true}
-				elementHeight={40}
-	            scrollLoadThreshold={50}
-				onInfiniteLoad={this.handleInfiniteLoad}
+				className='message-area'
 			>
 			    {messages}
 			</div>
-		)
+		);
 		// return <div>{messages}</div>;
 	},
-	handleInfiniteLoad: function () {
-		console.log('load');
-	}
+	// handleInfiniteLoad: function () {
+	// 	console.log('load');
+	// }
 });

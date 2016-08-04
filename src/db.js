@@ -13,8 +13,8 @@ function getConnection() {
 function connect() {
 	return new Promise(function (resolve, reject) {
 		getConnection()
-			.on('error', console.log)
-			.on('disconnected', connect)
+			.on('error', console.error)
+			// .on('disconnected', connect)
 			.once('open', function () {
 				resolve();
 			});
@@ -65,12 +65,16 @@ function getModels() {
 		}
 	});
 	messageSchema.set('toJSON', {getters: true});
+	var messageModels = {};
 
 	return {
 		Channel: Channel,
 		User: User,
 		getMessageModel: function (collectionName) {
-			return mongoose.model(collectionName, messageSchema, collectionName);
+			if (!messageModels[collectionName]) {
+				messageModels[collectionName] = mongoose.model(collectionName, messageSchema, collectionName);
+			}
+			return messageModels[collectionName];
 		}
 	};
 }

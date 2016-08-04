@@ -13,20 +13,17 @@ function exportToDb(db) {
 	db.connect()
 		.then(() => {
 			if (filename) {
-				return exportLoad(filename);
+				return exportLoad(filename)
+					.then(() => console.log('Export unzipped.'));
 			}
 		})
 		.then(() => {
 			return exportRead.readChannels()
-				.map(function (channel) {
-					return db.saveObject(db.models.Channel, channel);
-				});
+				.map(channel => db.saveObject(db.models.Channel, channel));
 		})
 		.then(() => {
 			return exportRead.readUsers()
-				.map(function (user) {
-					return db.saveObject(db.models.User, user);
-				});
+				.map(user => db.saveObject(db.models.User, user));
 		})
 		.then(() => {
 			return exportRead.getChannelsList()
@@ -37,10 +34,7 @@ function exportToDb(db) {
 						});
 				});
 		})
-		.all()
-		.then(() => {
-			console.log('done');
-		})
+		.then(() => console.log('done'))
 		.catch(function (error) {
 			console.error(error);
 			throw error;

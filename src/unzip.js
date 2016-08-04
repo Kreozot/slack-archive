@@ -1,5 +1,6 @@
 const AdmZip = require('adm-zip');
 const Promise = require('bluebird');
+const del = require('del');
 
 /**
  * Распаковать файл в папку export

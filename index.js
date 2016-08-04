@@ -31,11 +31,11 @@ function getInitialState(channelName) {
 			channel: channelName,
 			hideSystem: true,
 			// skip: 10,
-			limit: 25
+			limit: 50000
 		}),
 		function (channels, messages) {
 			messages.sort(function (message1, message2) {
-				return (parseFloat(message1.ts) < parseFloat(message2.ts)) ? 1 : -1;
+				return (parseFloat(message1._id) > parseFloat(message2._id)) ? 1 : -1;
 			});
 			return {
 				channels,

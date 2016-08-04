@@ -4,15 +4,17 @@ html, body, #app {
 }
 
 .archive {
-	display: flex;
     height: 100%;
 }
 
 .channels_list {
+	width: 250px;
+	height: 100%;
 	margin-right: 10px;
 	overflow-x: hidden;
 	overflow-y: scroll;
-	flex: 1;
+	display: inline-block;
+	float: left;
 }
 
 .channels__link {
@@ -21,7 +23,8 @@ html, body, #app {
 }
 
 .content_area {
-	flex: 5;
+	display: inline-block;
+	width: calc(100% - 270px);
 }
 
 .channel_title {
@@ -40,7 +43,7 @@ html, body, #app {
 	overflow-x:hidden;
 	overflow-y:scroll;
 	height: calc(100% - 40px);
-	width: 100%;
+	width: calc(100% - 270px);
 	position: absolute;
 }
 
