@@ -1,4 +1,12 @@
+This project is almost abandoned. Now it is just stupid archive without any design and usability shit - only channels and messages.
+
 ## How to use
+
+```
+git clone https://github.com/Kreozot/slack-archive.git
+cd slack-archive
+npm i
+```
 
 Create secret.json with your MongoDB params:
 ```
@@ -20,3 +28,5 @@ Then start it with
 ```
 npm run start
 ```
+
+Go to localhost:5000
