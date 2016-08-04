@@ -1,9 +1,10 @@
 var mongoose = require('mongoose');
-var Promise = require('bluebird');
-var config = require('../config.js');
-var moment = require('moment');
+const Promise = require('bluebird');
+const config = require('../config.js');
+const moment = require('moment');
+mongoose.Promise = Promise;
 
-var mongodbUri = `mongodb://${config.db.username}:${config.db.password}@${config.db.host}:${config.db.port}/${config.db.name}`;
+const mongodbUri = `mongodb://${config.db.username}:${config.db.password}@${config.db.host}:${config.db.port}/${config.db.name}`;
 
 function getConnection() {
 	return mongoose.connect(mongodbUri).connection;
@@ -29,7 +30,7 @@ function saveObject(Model, object) {
 			} else {
 				return false;
 			}
-		})
+		});
 }
 
 function getModels() {
@@ -60,7 +61,7 @@ function getModels() {
 		text: String,
 		ts: {
 			type: String,
-			get: ts => moment.unix(ts).format("DD-MM-YYYY HH:mm:ss")
+			get: ts => moment.unix(ts).format('DD-MM-YYYY HH:mm:ss')
 		}
 	});
 	messageSchema.set('toJSON', {getters: true});
@@ -105,4 +106,4 @@ module.exports = {
 	models,
 	getChannels,
 	getMessages
-}
+};

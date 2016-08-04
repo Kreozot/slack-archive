@@ -4,3 +4,5 @@
 /export
 /public
 /secret.json
+/*.log
+/*.zip
