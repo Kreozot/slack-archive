@@ -16,11 +16,5 @@ module.exports = {
 		host: 'localhost',
 		port: 5000
 	},
-	db: {
-		host: 'ds035995.mongolab.com',
-		port: 35995,
-		name: 'slack-archive',
-		username: secret.username,
-		password: secret.password
-	}
+	db: secret
 }
