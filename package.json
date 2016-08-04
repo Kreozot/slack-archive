@@ -49,7 +49,6 @@
     "gulp-util": "^3.0.7",
     "jscs": "^2.8.0",
     "jscs-loader": "^0.2.0",
-    "jscs-preset-awesome": "^1.0.2",
     "json-loader": "^0.5.4",
     "lost": "^6.6.3",
     "postcss": "^5.0.14",
