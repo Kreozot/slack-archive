@@ -7,8 +7,8 @@ module.exports = React.createClass({
 			<Message
 				text={message.text}
 				time={message.ts}
-				avatar={message.user.images.image24}
-				username={message.user.name}
+				avatar={message.user ? message.user.images.image24 : ''}
+				username={message.user ? message.user.name : ''}
 				key={message._id}
 			/>
 		);
